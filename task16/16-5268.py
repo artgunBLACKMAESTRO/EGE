@@ -1,4 +1,6 @@
+d={}
 def F(n):
+    global d
     q = 0
     n = str(n)
     for i in range(len(n)):
@@ -6,16 +8,12 @@ def F(n):
     n = int(n)
     if n < 3:
         return 1
-    if n == 60:
-        return -1
-    if n == 69:
-        return 12
-    if n == 70:
-        return 14
-    if n == 35:
-        return 2
     if n > 2 and q%2==0:
-        return F(n-1)-F(n-2)
+        if n not in d:
+            d[n]=F(n-1)-F(n-2)
+        return d[n]
     if n > 2 and q%2==1:
-        return F(n-1)+F(n//2)
+        if n not in d:
+            d[n]=F(n-1)+F(n//2)
+        return d[n]
 print(F(100))
