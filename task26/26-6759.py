@@ -4,11 +4,8 @@ a=a.split('\n')
 a.pop(0)
 a=list(map(int,a))
 c=len(a)//3
-a.sort()
-print(len(a))
-print(c)
+a.sort(reverse=True)
 for i in range(0,c):
-    print(a[i])
     a.pop(i)
 sum=sum(a)
 print(sum)
