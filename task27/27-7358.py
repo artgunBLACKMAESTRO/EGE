@@ -1,3 +1,4 @@
+
 from math import gcd as nod
 with open('27-7358') as f:
     a=f.read()
@@ -9,8 +10,9 @@ for i in range(len(a)-1):
     b=[]
     for z in range(i,len(a)):
         b.append(a[z])
-        h=nod(b)
+        h=gcd
         if h>=g:
             g=h
             m=max(m,sum(b))
+
 print(m)
