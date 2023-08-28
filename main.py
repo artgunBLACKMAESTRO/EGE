@@ -1,16 +1,29 @@
-# This is a sample Python script.
+import pygame
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# инициализируем библиотеку Pygame
+pygame.init()
 
+# определяем размеры окна
+window_size = (600, 600)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+# задаем название окна
+pygame.display.set_caption("Синий фон")
 
+# создаем окно
+screen = pygame.display.set_mode(window_size)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# задаем цвет фона
+background_color = (100, 0, 255)  # синий
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# заполняем фон заданным цветом
+screen.fill(background_color)
+
+# обновляем экран для отображения изменений
+pygame.display.flip()
+
+# показываем окно, пока пользователь не нажмет кнопку "Закрыть"
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
